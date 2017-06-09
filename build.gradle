@@ -1,0 +1,33 @@
+group 'br.com.estudos.ratpack'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.ratpack:ratpack-gradle:1.4.5"
+    }
+}
+
+apply plugin: "io.ratpack.ratpack-java"
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile ratpack.dependency("jackson")
+}
